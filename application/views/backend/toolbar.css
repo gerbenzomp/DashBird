@@ -1,0 +1,41 @@
+@charset "UTF-8";
+/* CSS Document */
+a.icon{
+	background-repeat: no-repeat;
+	background-position: 10px 8px;
+	font-family: Helvetica, sans-serif;
+	font-size: 13px;
+	text-decoration: none;
+	color: #06C;
+	font-weight: normal;
+	display: inline-block;
+	color: white;
+	padding: 11px;
+	margin: 0;
+	padding-left: 33px;
+}
+
+a.icon:hover{
+	background-color: black;
+	
+}
+
+	.toolbar{
+		
+	z-index: 100;
+	border-bottom: 1px solid #000000;	
+	
+	position: fixed;
+	x: 0;
+	y: 0;
+
+	width: 100%;
+	background: url(img/toolbar_blue.png) repeat-x;
+	/* text-align: center; */
+	color: white;
+	padding: 0 !important;
+	}
+
+	a.active{
+		background-color: black;
+	}

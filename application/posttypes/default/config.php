@@ -1,0 +1,6 @@
+<?php
+
+$posttype['col'] = "hidden";
+
+
+?>
