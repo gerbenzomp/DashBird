@@ -139,15 +139,10 @@ $('body').prepend(toolbar);
 	
 }
 
-<?php include(APPPATH."../config.php"); 
-if(!in_array("in_place", $plugins)){
-	?>
+
 	function showModal(){
 		window.location='<?=base_url();?>posts/fs_init/<?=PAGE?>';
 	}
-<?php	
-}
-?>
 
 
 </script>
