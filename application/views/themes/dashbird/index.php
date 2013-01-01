@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title><?=$site_title;?> - <?=$title;?></title>
 
-<link rel="stylesheet" href="<?=base_url();?>/application/views/themes/cineblah/style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="<?=base_url();?>/application/views/themes/dashbird/style.css" type="text/css" media="screen">
 
 
 <?=hook("head");?>
@@ -22,15 +22,6 @@ padding: 0;
 
 
 </style>
-
-
-
-<?php if(!logged_in()){ ?>
-<!-- jQuery -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-
-<?php } ?>
-
 
 
 </head>
