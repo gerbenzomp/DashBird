@@ -76,7 +76,7 @@ class Posts extends MX_Controller{
 		
 	
 		
-		include(APPPATH.'../config.php');
+		include(APPPATH.'config/plugins.php');
 		
 		$this->db->where('id', $id);
 		$q=$this->db->get('posts');
