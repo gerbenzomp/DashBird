@@ -6,9 +6,6 @@
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
 
---
--- Database: `gerben_dashbird1`
---
 
 -- --------------------------------------------------------
 
