@@ -58,7 +58,7 @@ $this->pagination->initialize($config);
 
 
 
-	$this->db->order_by('created desc');
+	$this->db->order_by('order_id asc, created desc');
 	$this->db->where('page', PAGE);
 	$this->db->where('col', $col);
 	$this->db->where('blog', $this->session->userdata('blog'));

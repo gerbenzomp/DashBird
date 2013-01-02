@@ -47,14 +47,14 @@ foreach($q->result() as $item){
 <div class="main">
 
 
-<!--
+
 <div class="note">Drag to reorder posts</div>
--->
+
 
 
 <ul id="sortable">
 <?php
-$this->db->order_by('created desc');
+$this->db->order_by('order_id asc, created desc');
 $this->db->where('blog', $this->session->userdata('blog'));
 $this->db->where('page', $page);
 $this->db->where('visible', 1);
@@ -111,9 +111,9 @@ foreach($q->result() as $item){
 ?>
 </ul>
 <br />
-<!--
-<input name="button" type="button" value="save" onclick="save();" />
--->
+
+<input name="button" type="button" value="save" onclick="save();" class="uniform" />
+
 <?php } ?>
 
 </div>
@@ -124,8 +124,7 @@ foreach($q->result() as $item){
 <div style="clear: both;"></div>
 
 <script type="text/javascript">
-
-	/*			
+	
 
 	$(function() {
 		$( "#sortable" ).sortable();
@@ -151,6 +150,6 @@ foreach($q->result() as $item){
 		});
 	}
 			
-*/
+
 </script>
 </div>
