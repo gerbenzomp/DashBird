@@ -10,7 +10,7 @@
 <?php if(isset($error)){ ?>
 <div class="error"><?=$error;?></div>
 <?php }else{ ?>
-<div class="note">Log in with your BlogBird username and password</div>
+<div class="note">Log in with your username and password</div>
 <?php } ?>
 
 
