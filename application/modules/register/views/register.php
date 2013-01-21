@@ -37,7 +37,7 @@ var str = $("#title").val();
   <tr>
     <td>Site Name</td>
     <td>&nbsp;</td>
-    <td align="right"><input type="text" name="title" size="35" value="" id="title" /></td>
+    <td align="right"><input type="text" name="title" size="35" value="" id="title" class="uniform" /></td>
   </tr>
 </table>
 </li>
@@ -47,7 +47,7 @@ var str = $("#title").val();
  <li class="box" style="padding-top: 10px; padding-bottom: 10px;"><table width="100%" border="0">
   <tr>
     <td>Site URL</td>
-    <td><input type="hidden" name="url" id="slugfield" /></td>
+    <td><input type="hidden" name="url" id="slugfield" class="uniform" /></td>
     <td align="right" id="slug"></td>
   </tr>
 </table>
@@ -57,7 +57,7 @@ var str = $("#title").val();
   <tr>
     <td>Email</td>
     <td>&nbsp;</td>
-    <td align="right"><input type="text" name="email" size="35" value="" /></td>
+    <td align="right"><input type="text" name="email" size="35" value="" class="uniform" /></td>
   </tr>
 </table>
 </li>
@@ -66,14 +66,14 @@ var str = $("#title").val();
   <tr>
     <td>Password</td>
     <td>&nbsp;</td>
-    <td align="right"><input type="password" name="password" id="password" size="35" /></td>
+    <td align="right"><input type="password" name="password" id="password" size="35" class="uniform" /></td>
   </tr>
 </table>
 </li>
 </ul>
 <br />
 
-<button type="submit">Register</button>
+<button type="submit" class="uniform">Register</button>
 <div class="spacer"></div>
 
 </form>

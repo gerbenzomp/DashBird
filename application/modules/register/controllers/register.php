@@ -29,7 +29,7 @@ class Register extends MX_Controller{
 					if($q->num_rows()==0 && $q2->num_rows()==0){
 						$data['title'] = $_POST['title'];
 						$data['url'] = $_POST['url'];
-						$data['theme'] = 'cineblah';
+						$data['theme'] = 'dashbird';
 						$this->db->insert('blogs', $data);
 						
 						$udata['username'] = $_POST['url'];
