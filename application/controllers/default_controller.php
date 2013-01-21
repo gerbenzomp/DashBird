@@ -20,6 +20,8 @@ class Default_controller extends MX_Controller {
 
 	$this->db->where('url', $blog);
 	$q=$this->db->get('blogs');
+	if($q->num_rows()>0){
+	
 	$myblog = $q->row();
 	
 	if($controller=='pages'){
@@ -38,6 +40,7 @@ class Default_controller extends MX_Controller {
 		$description = '';
 		$page = '';
 		$title = "Page Not Found.";
+		$site_title = "Oops";
 		include(APPPATH."views/themes/".$myblog->theme."/index.php");
 		exit;
 		
@@ -56,11 +59,30 @@ class Default_controller extends MX_Controller {
 	
 	}
 	
+	
+	}else{
+		
+		$maincontent = "<div style='text-align: center; min-height: 500px;'><p>Oops, this page was not found. Let's take you somewhere <a href='".base_url()."'>nicer</a>.</p></div>";
+		$sidebar = '';
+		$menu = '';
+		$description = '';
+		$page = '';
+		$title = "Page Not Found.";
+		$site_title = "Oops";
+		include(APPPATH."views/themes/dashbird/index.php");
+		exit;
+		
+		
+	}
+	
+	
 	echo modules::run($controller."/".$method, $var1);
 	
 	
 	
 	}
+	
+	
 	
 	
 	
