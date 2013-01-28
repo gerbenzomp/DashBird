@@ -83,6 +83,7 @@ class Feed extends MX_Controller{
 								$data['type'] = "feed";
 								$data['created'] = date('Y-m-d H:i:s', strtotime($post->pubDate));
 								$data['publish'] = 1;
+								$data['visible'] = 1;
 								$data['page'] = $page;
 								$data['blog'] = $this->session->userdata('blog');
 								$data['col'] = 'main';
