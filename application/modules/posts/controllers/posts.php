@@ -92,13 +92,10 @@ class Posts extends MX_Controller{
         
    
    <span class="minis" id="minis_<?=$id;?>">
-        <?php if(in_array('in_place', $plugins)){ ?>
-     
-      <a href="javascript: void(0);" title="settings" onclick="showModal('Post Settings', '<?=base_url();?>posts/settings/<?=$post['id'];?>');"><img src="<?=base_url();?>application/sources/icons/cog2.png" border="0" style="margin-right: 3px;" /></a>
-      <?php }else{ ?>
+      
       
       <a href="<?=base_url();?>posts/fs_edit/<?=$post['id'];?>/<?=$post['type'];?>" title="edit"><img src="<?=base_url();?>application/sources/icons/pencil.png" border="0" style="margin-right: 3px;" /></a>
-      <?php } ?>
+      
       
       
       <?php if($post['publish']==0){ ?>
