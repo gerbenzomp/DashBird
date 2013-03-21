@@ -137,6 +137,13 @@ textarea{
 </style>
 
 
+<!-- tag-it -->
+
+<link href="<?=base_url();?>application/sources/js/tag-it/css/jquery.tagit.css" rel="stylesheet" type="text/css">
+<link href="<?=base_url();?>application/sources/js/tag-it/css/tagit.ui-zendesk.css" rel="stylesheet" type="text/css">
+<script src="<?=base_url();?>application/sources/js/tag-it/js/tag-it.js" type="text/javascript" charset="utf-8"></script>
+
+
 </head>
 <body>
 <?php

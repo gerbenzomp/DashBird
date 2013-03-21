@@ -147,7 +147,54 @@ foreach($q->result() as $p){
 <br /><br />
 Author:<br />
 <input name="author" type="text" size="30" class="uniform" value="<?php if($post['author']==''){ echo $this->session->userdata('username'); } ?>">
+<br /><br />
 
+
+Tags (comma-separated):<br />
+<input name="tags" type="text" value="<?php echo $tags; ?>" id="tags" style="display: none;">
+
+
+
+<br /><br />
+
+<script>
+        $(document).ready(function() {
+			
+var sampleTags = [<?php
+$alltags = '';
+$this->db->where('blog', $this->session->userdata('blog'));
+$this->db->where('tags !=', '');
+$q=$this->db->get('posts');
+foreach($q->result() as $item){
+	
+	
+	$alltags .= str_replace(' ', '', strtolower($item->tags));
+}
+
+
+$arr = explode(',', $alltags);
+
+$array = array_count_values($arr);
+
+foreach($array as $key=>$value){
+	
+	if($value>1){
+		
+		?>'<?=$key;?>', <?php
+		
+	}
+	
+}
+
+?>'blogbird'];
+	
+            $('#tags').tagit({
+                availableTags: sampleTags
+            });
+			
+			
+		});
+</script>
 
 
 <br />

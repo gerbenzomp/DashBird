@@ -24,11 +24,17 @@ $window_title = "Add Sidebar Item";
 <?php
 
 	$this->db->order_by('created desc');
-	$this->db->where('page', PAGE);
-	$this->db->where('col', $col);
 	$this->db->where('blog', $this->session->userdata('blog'));
 	if(!$this->session->userdata('logged_in')){
 	$this->db->where('publish', 1);	
+	}
+	if(isset($tag)){
+	$this->db->like('tags', $tag);	
+	}
+	else
+	{
+	$this->db->where('page', PAGE);	
+	$this->db->where('col', $col);
 	}
 	$q=$this->db->get('posts');
 	$posts = $q->result_array();
@@ -59,14 +65,20 @@ $this->pagination->initialize($config);
 
 
 	$this->db->order_by('order_id asc, created desc');
-	$this->db->where('page', PAGE);
-	$this->db->where('col', $col);
 	$this->db->where('blog', $this->session->userdata('blog'));
 	if(!$this->session->userdata('logged_in')){
 	$this->db->where('publish', 1);	
 	}
-	$this->db->limit($num, $this->uri->segment(3));
+	if(isset($tag)){
+	$this->db->like('tags', $tag);	
+	}
+	else
+	{
+	$this->db->where('page', PAGE);	
+	$this->db->where('col', $col);
+	}
 	$q=$this->db->get('posts');
+
 	
 	
 

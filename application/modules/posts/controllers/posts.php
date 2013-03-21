@@ -23,6 +23,67 @@ class Posts extends MX_Controller{
 		
 	}
 	
+	
+	function show_tag($tag){
+		
+		$data['tag'] = $tag;
+		$data['col'] = 'main';
+
+	
+	$this->load->view("show_all", $data);
+		
+		
+	}
+	
+	
+	function tag($tag){
+		
+		//echo $this->uri->rsegment(1);
+		
+
+	
+		define("PAGE", '');
+		
+		
+		$data['menu'] = modules::run("pages/nav");
+		
+		$data['page'] = '';
+		
+		$data['title'] = humanize($tag);
+		$data['description'] = "";
+		
+		
+		
+		
+		// show the posts page
+		$data['maincontent'] = modules::run("posts/show_tag", $tag);
+	
+		
+		/*
+		$data['sidebar'] = modules::run("posts/show_all", "sidebar");
+		
+		
+		$data['sidebar2'] = modules::run("posts/show_all", "sidebar2");
+		
+		$data['sidebar3'] = modules::run("posts/show_all", "sidebar3");
+		*/
+		
+		$data['sidebar'] = '';
+	
+
+	
+	$this->db->where('url', $this->session->userdata('blog'));
+	$q = $this->db->get('blogs');
+	$blog = $q->row();
+	
+	
+	
+	$data['maincontent'] = 	modules::run("posts/show_all", $data);
+		
+		$this->load->view("themes/".$blog->theme."/index.php", $data);
+	}
+	
+	
 	function show($id){
 		
 	
