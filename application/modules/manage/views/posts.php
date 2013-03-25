@@ -7,7 +7,7 @@
  <div style=" margin-left: 365px; margin-top: 13px;"><a href="<?=base_url();?>posts/fs_init/home">add post</a></div>
    -->
   
-<a href="<?=base_url();?>posts/fs_init/home" class="add" title="add post""><img src="<?=base_url();?>application/views/backend/img/add.png" /></a>
+<a href="<?=base_url();?>posts/fs_init/<?=$page;?>" class="add" title="add post""><img src="<?=base_url();?>application/views/backend/img/add.png" /></a>
  
     
     <div class="clear"></div>

@@ -149,9 +149,12 @@ function lookForFile($name, $posttype){
 	elseif(file_exists(APPPATH."posttypes/".$posttype."/".$name.".php")){
 		return(APPPATH."posttypes/".$posttype."/".$name.".php");
 	}
+	elseif(file_exists(APPPATH."posttypes/default/".$name.".php")){
+		return(APPPATH."posttypes/default/".$name.".php");
+	}
 	else
 	{
-	 	return(APPPATH."posttypes/default/".$name.".php");
+	return FALSE;	
 	}
 	
 }

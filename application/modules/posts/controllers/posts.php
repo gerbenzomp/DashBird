@@ -549,19 +549,30 @@ function saveMe(){
 			$this->db->where('publish', 0);
 			$this->db->delete('posts');
 			
+			//find out what type of posts this page contains
+			$this->db->where('blog', $this->session->userdata('blog'));
+			$this->db->where('url', $page);
+			$q=$this->db->get('pages');
+			
+			$mypage = $q->row();
+			
+			if($mypage->type=='standard'){
+				$type = "article";
+			}
+			else
+			{
+				$type = $mypage->type;
+			}
 				
 			
-			$data=array('blog'=>$this->session->userdata('blog'), 'page'=>$page, 'type'=>'article', 'created'=>date("Y-m-d H:i:s"));
+			$data=array('blog'=>$this->session->userdata('blog'), 'page'=>$page, 'type'=>$type, 'created'=>date("Y-m-d H:i:s"));
 			$this->db->insert('posts', $data);
 			
 			$id = mysql_insert_id();
 			
-			header("Location: ".base_url()."posts/fs_edit/".$id."/article");
+			header("Location: ".base_url()."posts/fs_edit/".$id."/".$type);
 			
 	
-		
-	
-		
 		
 	}
 	

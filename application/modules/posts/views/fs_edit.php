@@ -85,6 +85,20 @@ Options:<br />
 Title<br />
 <input type="text" name="title" class="uniform" style="font-size: 22px;" size="65" value="<?=$post['title'];?>">  
 <br><br>
+
+
+
+<?php
+
+	// allows you to add options
+	$inc = lookForFile('below_title', $this->uri->segment(4));
+	if($inc!=FALSE){
+	include($inc);
+	}
+	
+?>
+
+
 Body<br>
 <textarea name="body" style="width: 100%;" rows="8" id="body"><?=$post['body'];?></textarea>
 
