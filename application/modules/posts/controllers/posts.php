@@ -203,8 +203,19 @@ class Posts extends MX_Controller{
 		
 		$edit_buttons = modules::run('posts/edit_buttons', $data['post']['id']);
 		
+			?>
+        <div class="item" id="item-<?=$data['post']['id'];?>">
+        
+        <?php
+		
 		$inc = lookForFile('front', $post['type']);
 		include($inc);
+		
+		?>
+        </div>
+        
+        <?php
+		
 	}
 	
 	function post_front($id){
