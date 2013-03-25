@@ -318,9 +318,13 @@ $('#redactor_modal_inner').load(url, function() {
 
 		  
 		}).done(function() { 
-		
-		    $('.head').animate({'background-color': '#99cc99'}, 1000, function() {
+	
+	  
+   $('.head').append('<a href="<?=base_url();?>post/<?=$id;?>" style="position: absolute; top: 95px; padding-left: 5px;">&laquo; View article</a>');
+   $('.head').animate({'background-color': '#99cc99'}, 1000, function() {
    $('.head').animate({'background-color': '#EEE'});
+ 
+   
   });
 		});
 	} 
